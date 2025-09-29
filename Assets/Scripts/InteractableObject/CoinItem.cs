@@ -6,7 +6,6 @@ public class CoinItem : InteractableObject
 {
     [Header("동전 설정")]
     public int CoinValue = 10;
-    public string questTag = "Coin";
 
     protected override void Start()
     {
@@ -18,12 +17,7 @@ public class CoinItem : InteractableObject
 
     protected override void CollectItem()
     {
-
-        if(QuestManager.instance != null)
-        {
-            QuestManager.instance.AddCollectProgress(questTag);
-        }
-        transform.Rotate(Vector3.up * 180f);
+        transform.Rotate(Vector3.up * 360f);
         Destroy(gameObject, 0.5f);
     }
 }
