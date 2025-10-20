@@ -9,4 +9,7 @@ public class ItemData : ScriptableObject
     public Sprite itemIcon;
     public int maxStack = 99;
 
+    public bool isUsable = false;
+    public int healAmount = 0;
+
 }
