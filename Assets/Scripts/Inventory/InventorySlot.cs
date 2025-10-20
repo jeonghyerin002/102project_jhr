@@ -13,9 +13,19 @@ public class InventorySlot : MonoBehaviour
     public Image itemIcon;
     public Text amountText;
     public GameObject emptySlotImage;
+
+    public Button slotButton;
     void Start()
     {
-        
+        UpdateSlotUI();
+        slotButton.onClick.AddListener(OnSlotClick);
+    }
+    void OnSlotClick()
+    {
+        if(item != null)
+        {
+            ItemUsePopup.instance.ShowPopup(item, this);
+        }
     }
 
     //슬롯에 아이템 설정하는 함수
